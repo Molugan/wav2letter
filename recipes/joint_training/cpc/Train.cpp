@@ -461,7 +461,6 @@ int main(int argc, char** argv) {
           version,
           _cfg,
           network,
-          _feat_network,
           criterion);
     } else {
       FL_LOG_MASTER(INFO) << "Loading architecture file from " << archfiles[0];
