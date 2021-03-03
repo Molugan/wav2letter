@@ -80,11 +80,9 @@ class CPCCriterion : public fl::app::asr::SequenceCriterion {
       temperature_)
 
   CPCCriterion() = default;
-
 };
 
 } // namespace w2l
-
 
 CEREAL_REGISTER_TYPE(w2l::CPCCriterion)
 CEREAL_CLASS_VERSION(w2l::CPCCriterion, 3)

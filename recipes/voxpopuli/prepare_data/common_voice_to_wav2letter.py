@@ -128,14 +128,14 @@ def get_full_audio_data(
 
 
 def convert_audio_data(
-    input_list: List[FileInfo], out_dir_audio: Path, overwrite : bool = False
+    input_list: List[FileInfo], out_dir_audio: Path, overwrite: bool = False
 ) -> List[FileInfo]:
 
     out_dir_audio.mkdir(exist_ok=True)
     output = []
     for file_info in tqdm(input_list, total=len(input_list)):
         path_out = (out_dir_audio / file_info.path_.name).with_suffix(".flac")
-        
+
         if path_out.is_file() and not overwrite:
             continue
 
@@ -203,7 +203,9 @@ def main(args):
         audio_data = filter_data_by_id(audio_data, filter_ids)
 
     if args.path_conversion is not None:
-        audio_data = convert_audio_data(audio_data, Path(args.path_conversion), args.overwrite)
+        audio_data = convert_audio_data(
+            audio_data, Path(args.path_conversion), args.overwrite
+        )
 
     speakers = get_speakers_list(audio_data)
     print(f"{len(speakers)} speakers found")
@@ -235,7 +237,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--overwrite",
-        action='store_true',
+        action="store_true",
         help="Overwrite existing audio data.",
     )
     parser.add_argument(
