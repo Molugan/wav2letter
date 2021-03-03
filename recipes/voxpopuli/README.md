@@ -2,6 +2,8 @@
 
 Wav2letter checkpoints from the [voxpopuli paper](https://arxiv.org/abs/2101.00390) as well as some code to load them. They correspond to the implementation of wav2vec as described in https://arxiv.org/abs/2011.00093.
 
+The VoxPopuli dataset can be directly downloaded from the [VoxPopuli repository](https://github.com/facebookresearch/voxpopuli/).
+
 The code included in this folder is a patched version of the original code developped by the [wav2letter team](https://github.com/facebookresearch/wav2letter/tree/masked_cpc/recipes/joint_training) in order to include the pre-training.
 
 ## Loading the checkpoint
