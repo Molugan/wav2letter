@@ -43,7 +43,21 @@ void LoadFeatures(std::shared_ptr<fl::Sequential>  net0, std::shared_ptr<fl::Seq
 ## Building the Common Voice manifest files
 
 First, download the datasets you're interested in from the [Common Voice website](https://commonvoice.mozilla.org/en/datasets).
-Uncompress the data and copy them into $COMMON_VOICE_DIR/$LANG
+Uncompress the data and copy them into $COMMON_VOICE_DIR/$LANG. You should get the following structure:
+```
+[COMMON_VOICE_DIR]
+├──[LANG]/
+    ├── clips/
+    │   ├── *.mp3 files
+    |__ dev.tsv
+    |__ invalidated.tsv
+    |__ other.tsv
+    |__ test.tsv
+    |__ train.tsv
+    |__ validated.tsv
+    |__ reported.tsv (as of Corpus 5.0)
+```
+
 Then run the following command:
 ```
 cd prepare_data
